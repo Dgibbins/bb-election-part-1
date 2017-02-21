@@ -5,8 +5,39 @@
     <title>Bikini Bottom Election</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="election.js"></script>
+    <link rel="stylesheet" href="styles.css">
   </head>
+  <style media="screen">
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+  </style>
   <body>
-    <!-- I'm ready, I'm ready, I'm ready! -->
+
+    <div class="w3-content w3-section" style="max-width:500px">
+      <img class="mySlides w3-animate-fading" src="images/bikini-bottom.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="images/list.png" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="images/the.jpg" style="width:100%">
+      <button class='view-candidates'>View votes</button>    <!-- // Add a <ul> to your index.html file, with an id. This is what we'll attach our data to. -->
+          <ul id='election-list'>
+          </ul>
+        </img>
+    </div>
+    <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 5000);
+    }
+    </script>
   </body>
 </html>
